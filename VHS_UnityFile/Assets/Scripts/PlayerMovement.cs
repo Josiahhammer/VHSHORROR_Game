@@ -16,17 +16,36 @@ public class PlayerMovement : MonoBehaviour
 
     public Light flashlight;
 
+    public float frictionCoefficient = 2.0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+
+
+    private void ApplyFriction()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+        {
+            Vector3 frictionDirection = new Vector3(hit.normal.x, 0, hit.normal.z);
+            Vector3 velocity = rb.velocity;
+            Vector3 relativeVelocity = velocity - Vector3.Dot(velocity, frictionDirection) * frictionDirection;
+            rb.velocity = relativeVelocity * frictionCoefficient;
+        }
+    }
+
+
+
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        xRotation -= mouseY;
+        xRotation -= mouseY ;
         yRotation -= mouseX;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.GetChild(1).localRotation = Quaternion.Euler(xRotation, 0f, 0f);
@@ -49,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+        ApplyFriction();
     }
 
     bool IsGrounded()
