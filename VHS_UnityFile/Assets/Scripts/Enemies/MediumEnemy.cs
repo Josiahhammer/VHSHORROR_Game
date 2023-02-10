@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class MediumEnemy : EnemyManager
+public class MediumEnemy : MonoBehaviour
 {
-    public float moveSpeed;
-    public int health;
-    public Transform playerTransform;
+    //These are unique to the medium enemy
+    public float moveSpeed = 3f;
+    public int health = 200;
     public float damageRange = 2f;
-    public int damage = 20;
+    public int damage = 40;
     public float attackCooldown = 1f;
     private float attackTimer;
+
+    //These are not unique
+    public Transform playerTransform;
     private Vector3 direction;
     void Start()
     {

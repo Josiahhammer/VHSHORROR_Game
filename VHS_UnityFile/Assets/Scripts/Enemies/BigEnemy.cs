@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class BigEnemy : EnemyManager
 {
-    public float moveSpeed;
-    public int health;
-    public Transform playerTransform;
-    public float damageRange = 2f;
-    public int damage = 50;
+    //These are unique to the big enemy
+    public float moveSpeed = 3;
+    public int health = 200;
+    public float damageRange = 4f;
+    public int damage = 40;
     public float attackCooldown = 1f;
     private float attackTimer;
+
+    //These are not unique
+    public Transform playerTransform;
     private Vector3 direction;
     void Start()
     {

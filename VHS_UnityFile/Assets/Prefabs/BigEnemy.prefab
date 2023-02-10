@@ -78,10 +78,10 @@ MonoBehaviour:
   smallEnemyPrefab: {fileID: 0}
   moveSpeed: 3
   health: 200
-  playerTransform: {fileID: 0}
   damageRange: 4
-  damage: 50
+  damage: 40
   attackCooldown: 1
+  playerTransform: {fileID: 0}
 --- !u!1001 &3237594634014137584
 PrefabInstance:
   m_ObjectHideFlags: 0

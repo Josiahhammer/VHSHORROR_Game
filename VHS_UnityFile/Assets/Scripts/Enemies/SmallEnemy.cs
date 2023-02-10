@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class SmallEnemy : EnemyManager
+public class SmallEnemy : MonoBehaviour
 {
-    public float moveSpeed;
-    public int health;
-    public Transform playerTransform;
-    public float damageRange = 2f;
+    //These are unique to the small enemy
+    public float moveSpeed = 8f;
+    public int health = 10;
+    public float damageRange = 1f;
     public int damage = 5;
     public float attackCooldown = 1f;
     private float attackTimer;
+
+    //These are not unique
+    public Transform playerTransform;
     private Vector3 direction;
     void Start()
     {
