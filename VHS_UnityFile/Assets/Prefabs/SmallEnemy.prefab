@@ -42,15 +42,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf750f987dbb7b4dbe9f91da461e7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigEnemyPrefab: {fileID: 0}
-  mediumEnemyPrefab: {fileID: 0}
-  smallEnemyPrefab: {fileID: 0}
   moveSpeed: 8
   health: 10
-  playerTransform: {fileID: 0}
   damageRange: 1
   damage: 5
   attackCooldown: 1
+  playerTransform: {fileID: 0}
 --- !u!1 &7368989827967227213
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9170955011138046808
 Transform:
   m_ObjectHideFlags: 0
