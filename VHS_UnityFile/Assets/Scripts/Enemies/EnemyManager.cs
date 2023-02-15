@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
 
         // Add the instances to the scene
         bigEnemy.transform.position = new Vector3(36, 11, 26);
-        mediumEnemy.transform.position = new Vector3(40, 11, 26);
+        mediumEnemy.transform.position = new Vector3(40, 20, 26);
         smallEnemy.transform.position = new Vector3(44, 11, 26);
 
 
