@@ -7,7 +7,6 @@ MonoImporter:
   - bigEnemyPrefab: {fileID: 446778662842379190, guid: e6eadc501e042bc48a17a8986d6b0622, type: 3}
   - mediumEnemyPrefab: {fileID: 3248222521843447264, guid: a8f60aa4b0a6cf943a1447bb5e1ff9a1, type: 3}
   - smallEnemyPrefab: {fileID: 7368989827967227213, guid: 4f49d46a64102a849b50f66e6ba76862, type: 3}
-  - playerTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

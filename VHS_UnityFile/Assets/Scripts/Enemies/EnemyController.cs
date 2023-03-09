@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public NavMeshAgent agent;
+   /* public NavMeshAgent agent;
     public Transform player;
     public LayerMask groundLayer, playerLayer;
 
@@ -84,5 +84,5 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
-
+*/
 }

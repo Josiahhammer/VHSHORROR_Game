@@ -24,7 +24,6 @@ public class GameManager
     private GameManager()
     {
         // Create an instance of the Player class
-        Player = new Player();
     }
 
     // Public property to hold the instance of the Player class
