@@ -2,31 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager
+public class GameManager : MonoBehaviour
 {
-    // Static instance variable to hold the single instance of the class
-    private static GameManager instance = null;
+/*    public static GameManager Instance { get; private set; }
+    public Player Player { get; set; } // make set accessor public
 
-    // Public property to get the instance of the class
-    public static GameManager Instance
+    private void Awake()
     {
-        get
+        if (Instance != null && Instance != this)
         {
-            if (instance == null)
-            {
-                instance = new GameManager();
-            }
-            return instance;
+            Destroy(gameObject);
+            return;
         }
-    }
-
-    // Private constructor to prevent direct instantiation of the class
-    private GameManager()
-    {
-        // Create an instance of the Player class
-    }
-
-    // Public property to hold the instance of the Player class
-    public Player Player { get; private set; }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }*/
 }
 

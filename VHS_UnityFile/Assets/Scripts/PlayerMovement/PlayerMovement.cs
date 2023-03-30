@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,6 +15,15 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Load saved position and rotation from file
+        if (File.Exists(Application.persistentDataPath + "/player_data.json"))
+        {
+            string jsonData = File.ReadAllText(Application.persistentDataPath + "/player_data.json");
+            PlayerData playerData = JsonUtility.FromJson<PlayerData>(jsonData);
+            transform.position = playerData.position;
+            transform.rotation = playerData.rotation;
+        }
     }
 
     private void FixedUpdate()
@@ -37,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = walkSpeed;
         }
     }
+
     bool IsGrounded()
     {
         RaycastHit hit;
@@ -45,5 +56,33 @@ public class PlayerMovement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    // Save player position and rotation to file
+    private void SavePlayerData()
+    {
+        PlayerData playerData = new PlayerData();
+        playerData.position = transform.position;
+        playerData.rotation = transform.rotation;
+        string jsonData = JsonUtility.ToJson(playerData);
+        File.WriteAllText(Application.persistentDataPath + "/player_data.json", jsonData);
+    }
+
+    private void OnApplicationQuit()
+    {
+        SavePlayerData();
+    }
+
+    private void OnDestroy()
+    {
+        SavePlayerData();
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SavePlayerData();
+        }
     }
 }
