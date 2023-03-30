@@ -11,6 +11,8 @@ public class TitleScreenManager : MonoBehaviour
 
     private bool isLoading = false;
 
+
+
     void Update()
     {
         if (!isLoading && Input.GetKeyDown(KeyCode.Space))
@@ -41,6 +43,9 @@ public class TitleScreenManager : MonoBehaviour
 
         // Load the main scene
         SceneManager.LoadScene("MainScene");
+
+        isLoading = false;
+
     }
 
 }

@@ -1317,7 +1317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -53}
+  m_AnchoredPosition: {x: 0.000015259, y: -101}
   m_SizeDelta: {x: 1297.697, y: 466.3088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141482136
@@ -1353,7 +1353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "YOU DIED\nPress Escape to Quit \nor Q to Return to Menu"
+  m_Text: "YOU DIED\nPress Escape to Quit \n"
 --- !u!222 &1141482137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1369,11 +1369,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141482134}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 906e96f9298eb7f4093e0c51b6b71f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingTime: 2
 --- !u!1001 &1233719089
 PrefabInstance:
   m_ObjectHideFlags: 0

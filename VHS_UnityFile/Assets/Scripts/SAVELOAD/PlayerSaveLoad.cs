@@ -72,7 +72,7 @@ public class PlayerSaveLoad : MonoBehaviour
         return Path.Combine(Application.persistentDataPath, saveFileName);
     }
 
-    private void Update()
+    public void Update(PlayerMovement playerMovement)
     {
         if (playerHealth.currentHealth <= 0)
         {

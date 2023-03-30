@@ -1,14 +1,27 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ReturnTitle : MonoBehaviour
 {
-    private void Update()
+    public float loadingTime = 2f;
+
+    void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if ( Input.GetKeyDown(KeyCode.Q))
         {
-            SceneManager.UnloadSceneAsync("MainScene");
-            SceneManager.LoadScene("TitleScreen");
+            StartCoroutine(LoadMainScene());
         }
     }
+
+    IEnumerator LoadMainScene()
+    {
+        // Unload the loading scene
+        SceneManager.UnloadSceneAsync("MainScene");
+
+        // Load the main scene
+        SceneManager.LoadScene("TitleScreen");
+        yield return null;
+    }
+
 }
